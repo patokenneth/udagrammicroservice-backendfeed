@@ -19,23 +19,23 @@ import { V0MODELS } from './controllers/v0/model.index';
   app.use(bodyParser.json());
 
   //Former CORS
-  app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:8100");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-    next();
-  });
-  app.use(cors);
+  // app.use(function(req, res, next) {
+  //   res.header("Access-Control-Allow-Origin", "http://localhost:8100");
+  //   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  //   next();
+  // });
+  
 
-  // app.use(cors({
-  //   allowedHeaders: [
-  //     'Origin', 'X-Requested-With',
-  //     'Content-Type', 'Accept',
-  //     'X-Access-Token', 'Authorization',
-  //   ],
-  //   methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-  //   preflightContinue: true,
-  //   origin: '*',
-  // }));
+  app.use(cors({
+    allowedHeaders: [
+      'Origin', 'X-Requested-With',
+      'Content-Type', 'Accept',
+      'X-Access-Token', 'Authorization',
+    ],
+    methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+    preflightContinue: true,
+    origin: '*',
+  }));
 
   app.use('/api/v0/', IndexRouter)
 
