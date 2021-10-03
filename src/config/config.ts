@@ -38,7 +38,7 @@ switch (process.env.environment) {
 // console.log(password);
 // console.log(database);
 // console.log(host);
-//console.log(AWS_MEDIA_BUCKET);
+//console.log(POSTGRESS_PASSWORD);
 
 export {
   POSTGRESS_USERNAME,
